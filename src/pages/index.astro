@@ -1,0 +1,318 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+
+// Sample data for the demo
+const featuredProperties = [
+  {
+    title: "Time Tower Hotel Suites",
+    location: "CBD, New Administrative Capital",
+    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    irr: "14.5%",
+    funded: 85,
+    investors: 1240,
+    highlight: "High Yield"
+  },
+  {
+    title: "Al-Rehab Commercial Hub",
+    location: "New Cairo, Cairo",
+    image: "https://images.unsplash.com/photo-1519420573924-65fcd45245f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    irr: "12.0%",
+    funded: 100,
+    investors: 850,
+    highlight: "Fully Funded"
+  },
+  {
+    title: "Zayed Residential Complex",
+    location: "Sheikh Zayed, Giza",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    irr: "11.2%",
+    funded: 42,
+    investors: 315
+  }
+];
+---
+
+<Layout title="Farida.estate - Own Fractional Real Estate in Egypt">
+  <Header />
+  
+  <main>
+    <Hero />
+
+    <!-- Trusted Partners / As Seen In -->
+    <section class="py-10 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-sm font-semibold text-slate-400 tracking-widest uppercase mb-8">Trusted by industry leaders & regulators</p>
+        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <!-- Mock Partner Logos (Using text/SVG placeholders for premium look) -->
+          <div class="flex items-center gap-2">
+            <svg class="h-8 w-8 text-slate-800" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span class="text-xl font-bold font-serif text-slate-800">CBEFRA</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-8 w-8 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            <span class="text-xl font-bold text-slate-800 tracking-tight">Coldwell Banker</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-8 w-8 text-slate-800" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 8v8m-4-4h8" stroke="white" stroke-width="2"/></svg>
+            <span class="text-xl font-bold font-serif text-slate-800 italic">Financial Times</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-8 w-8 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <span class="text-xl font-bold text-slate-800">Forbes ME</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 bg-slate-50 relative overflow-hidden">
+      <!-- Decorative Background Elements -->
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')] [mask-image:linear-gradient(to_bottom,white,transparent)] opacity-60"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 tracking-tight">Institutional Real Estate, Simplified.</h2>
+          <p class="text-xl text-slate-600">We've broken down the barriers to premium real estate investing into four straightforward steps.</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8 relative">
+          <!-- Connecting Line (Desktop only) -->
+          <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-slate-200"></div>
+
+          <!-- Step 1 -->
+          <div class="relative text-center group">
+            <div class="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center border-4 border-slate-50 shadow-xl mb-6 relative z-10 group-hover:border-blue-100 transition-colors duration-300">
+              <span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-farida-primary text-white flex items-center justify-center text-sm font-bold border-4 border-slate-50">1</span>
+              <svg class="w-10 h-10 text-farida-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Browse Properties</h3>
+            <p class="text-slate-600 leading-relaxed">Explore our curated marketplace of high-yield properties vetted by experts.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative text-center group">
+            <div class="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center border-4 border-slate-50 shadow-xl mb-6 relative z-10 group-hover:border-blue-100 transition-colors duration-300">
+              <span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-farida-primary text-white flex items-center justify-center text-sm font-bold border-4 border-slate-50">2</span>
+              <svg class="w-10 h-10 text-farida-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Buy Shares</h3>
+            <p class="text-slate-600 leading-relaxed">Purchase shares securely online in minutes, starting from as little as EGP 5,000.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative text-center group">
+            <div class="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center border-4 border-slate-50 shadow-xl mb-6 relative z-10 group-hover:border-emerald-100 transition-colors duration-300">
+              <span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-farida-green text-white flex items-center justify-center text-sm font-bold border-4 border-slate-50">3</span>
+              <svg class="w-10 h-10 text-farida-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Earn Monthly</h3>
+            <p class="text-slate-600 leading-relaxed">Receive your share of rental income deposited directly into your wallet every single month.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative text-center group">
+            <div class="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center border-4 border-slate-50 shadow-xl mb-6 relative z-10 group-hover:border-blue-100 transition-colors duration-300">
+              <span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-farida-primary text-white flex items-center justify-center text-sm font-bold border-4 border-slate-50">4</span>
+              <svg class="w-10 h-10 text-farida-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Hold or Sell</h3>
+            <p class="text-slate-600 leading-relaxed">Benefit from long-term property appreciation, or sell your shares easily on our secondary market.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section class="py-20 bg-slate-50 border-t border-slate-200/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4 tracking-tight">
+              Curated Investment Opportunities
+            </h2>
+            <p class="text-lg text-slate-600">
+              Browse our selection of institutional-quality properties, meticulously vetted for stable cash flow and growth potential.
+            </p>
+          </div>
+          <div class="mt-6 md:mt-0 shrink-0">
+            <a href="/invest" class="inline-flex items-center px-6 py-3 border border-slate-300 text-sm font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition-colors">
+              View All Properties
+              <svg class="ml-2 -mr-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Property Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProperties.map(property => (
+            <PropertyCard {...property} />
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why Choose Us / Trust Section -->
+    <section class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <!-- Left Text Content -->
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm font-medium mb-6">
+              <span class="flex h-2 w-2 rounded-full bg-farida-primary"></span>
+              The Farida Standard
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">Built for Institutional Trust</h2>
+            <p class="text-xl text-slate-600 mb-12">We manage the complexity of physical real estate so you can focus entirely on enjoying the returns. Here's why 9,000+ investors trust Farida.</p>
+            
+            <div class="space-y-10">
+              <!-- Feature 1 -->
+              <div class="flex gap-6">
+                <div class="shrink-0 group w-16 h-16 bg-gradient-to-br from-blue-50 to-white rounded-2xl flex items-center justify-center text-farida-accent ring-1 ring-blue-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
+                  <div class="absolute inset-0 bg-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <svg class="w-8 h-8 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" class="origin-center group-hover:scale-105 transition-transform duration-300" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">FRA Regulated</h3>
+                  <p class="text-slate-600 leading-relaxed">Fully compliant with the Egyptian Financial Regulatory Authority, ensuring your investments are secure and transparent.</p>
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="flex gap-6">
+                <div class="shrink-0 group w-16 h-16 bg-gradient-to-br from-blue-50 to-white rounded-2xl flex items-center justify-center text-farida-accent ring-1 ring-blue-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
+                  <svg class="w-8 h-8 relative z-10 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Passive Income</h3>
+                  <p class="text-slate-600 leading-relaxed">Earn monthly rental dividends deposited directly into your account, alongside potential long-term capital appreciation.</p>
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="flex gap-6">
+                <div class="shrink-0 group w-16 h-16 bg-gradient-to-br from-emerald-50 to-white rounded-2xl flex items-center justify-center text-emerald-600 ring-1 ring-emerald-100 shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
+                  <svg class="w-8 h-8 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2">Expert Management</h3>
+                  <p class="text-slate-600 leading-relaxed">Through our partnership with leading property managers, we handle acquisition, maintenance, and tenant relations entirely.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Image / Visual -->
+          <div class="relative mt-10 lg:mt-0">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
+              <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Executive Real Estate Management" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center shrink-0">
+                    <svg class="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-bold text-lg">Fully Managed</h4>
+                    <p class="text-slate-200 text-sm">Sit back and monitor via your dashboard</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -top-12 -right-12 w-64 h-64 bg-blue-50 rounded-full -z-10 mix-blend-multiply"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 tracking-tight">Hear From Our Investors</h2>
+          <p class="text-xl text-slate-600">Join thousands of Egyptians building generational wealth through smart, fractional property ownership.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 relative">
+            <svg class="absolute top-6 right-6 w-8 h-8 text-blue-100" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <div class="flex items-center gap-4 mb-6 relative z-10">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Ahmed M." class="w-14 h-14 rounded-full object-cover ring-2 ring-slate-100" />
+              <div>
+                <h4 class="font-bold text-slate-900">Ahmed M.</h4>
+                <p class="text-sm text-slate-500">Corporate Executive</p>
+              </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed italic relative z-10">"Farida made it incredibly easy to diversify my portfolio. I used to think I needed millions to invest in prime commercial real estate, but now I'm earning 13% yields with just EGP 50,000."</p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white rounded-2xl p-8 shadow-md border border-slate-200 relative transform md:-translate-y-4">
+            <svg class="absolute top-6 right-6 w-8 h-8 text-emerald-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <div class="flex items-center gap-4 mb-6 relative z-10">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Nour K." class="w-14 h-14 rounded-full object-cover ring-2 ring-emerald-100" />
+              <div>
+                <h4 class="font-bold text-slate-900">Nour K.</h4>
+                <p class="text-sm text-slate-500">Software Engineer</p>
+              </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed italic relative z-10">"The monthly rental payouts depositing right into my Farida wallet is the ultimate passive income. The transparency and dashboard UI are lightyears ahead of traditional brokers."</p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 relative">
+            <svg class="absolute top-6 right-6 w-8 h-8 text-blue-100" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <div class="flex items-center gap-4 mb-6 relative z-10">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Omar T." class="w-14 h-14 rounded-full object-cover ring-2 ring-slate-100" />
+              <div>
+                <h4 class="font-bold text-slate-900">Omar T.</h4>
+                <p class="text-sm text-slate-500">Business Owner</p>
+              </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed italic relative z-10">"As someone who already owns physical properties, Farida is a breath of fresh air. No maintenance calls, no tenant disputes. Just pure, vetted, high-grade institutional investments."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-24 bg-slate-900 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504615755583-2916b52192a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] opacity-10 object-cover mix-blend-luminosity"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Ready to Build Your Legacy?</h2>
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Create a free account today to browse our live marketplace, view detailed property financials, and make your first investment in minutes.</p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/signup" class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-emerald-400 hover:bg-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:-translate-y-1 transition-all duration-300">
+            Get Started For Free
+          </a>
+          <a href="/invest" class="inline-flex justify-center items-center px-8 py-4 border border-slate-600 text-lg font-medium rounded-lg text-white hover:bg-slate-800 backdrop-blur-sm transition-all duration-300">
+            Explore Properties
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-slate-500">Sign up takes less than 3 minutes. No credit card required to view offers.</p>
+      </div>
+    </section>
+
+  </main>
+</Layout>

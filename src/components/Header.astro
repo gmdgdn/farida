@@ -1,0 +1,55 @@
+---
+// Header.astro
+const navLinks = [
+  { name: 'Invest', href: '/invest' },
+  { name: 'Learn', href: '/learn' },
+  { name: 'About Us', href: '/about' },
+];
+---
+
+<header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2 group">
+          <svg class="h-8 w-8 text-farida-primary group-hover:text-farida-accent transition-colors" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4 10h3v7H4zM10.5 10h3v7h-3zM2 19h20v3H2zM17 10h3v7h-3zM12 1L2 6v2h20V6z" />
+          </svg>
+          <span class="font-serif font-bold text-2xl text-farida-primary tracking-tight">FARIDA</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-sm font-medium text-slate-600 hover:text-farida-primary transition-colors">
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA Buttons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="/login" class="text-sm font-medium text-slate-600 hover:text-farida-primary transition-colors">
+          Log In
+        </a>
+        <a href="/signup" class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-md text-white bg-farida-accent hover:bg-blue-700 shadow-sm hover:shadow transition-all duration-200">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="flex items-center md:hidden">
+        <button type="button" class="text-slate-500 hover:text-slate-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-farida-accent" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
